@@ -133,7 +133,7 @@ const AddSalaryForm = () => {
 
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/employee/empID/${empID}`
+        `http://lms-be-0-0-3-release.onrender.com/api/employee/empID/${empID}`
       );
       console.log(data);
       setEmployeeDetails({
@@ -186,7 +186,7 @@ const AddSalaryForm = () => {
       };
 
       await axios.post(
-        `http://localhost:5000/api/employees/salaries/${EmpID}/salary`,
+        `http://lms-be-0-0-3-release.onrender.com/api/employees/salaries/${EmpID}/salary`,
         salaryData
       );
       alert("Salary added successfully");
