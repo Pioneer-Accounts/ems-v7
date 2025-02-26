@@ -5,7 +5,7 @@ const EmployeeView = () => {
   const [employees, setEmployees] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/') // Adjust API URL if needed
+    axios.get('http://lms-be-0-0-3-release.onrender.com/api/') // Adjust API URL if needed
       .then(response => {
         setEmployees(response.data);
       })
