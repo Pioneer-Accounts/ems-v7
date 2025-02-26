@@ -16,7 +16,7 @@ const EmployeeDetails = () => {
     }
 
     try {
-      const response = await axios.get(`http://lms-be-0-0-3-release.onrender.com/api/singleemployee/empID/${empID}`);
+      const response = await axios.get(`https://lms-be-0-0-3-release.onrender.com/api/singleemployee/empID/${empID}`);
       setEmployee(response.data);
       setUpdatedEmployee(response.data);
       setError("");
