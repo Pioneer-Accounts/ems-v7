@@ -16,7 +16,7 @@ const EmployeeDetails = () => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:8080/api/singleemployee/empID/${empID}`);
+      const response = await axios.get(`http://lms-be-0-0-3-release.onrender.com/api/singleemployee/empID/${empID}`);
       setEmployee(response.data);
       setUpdatedEmployee(response.data);
       setError("");
@@ -71,7 +71,7 @@ const EmployeeDetails = () => {
   const updateEmployee = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/empID/${empID}`,
+        `http://lms-be-0-0-3-release.onrender.com/api/empID/${empID}`,
         updatedEmployee
       );
       setEmployee(response.data); // Updated response with new RetirementDate
@@ -86,7 +86,7 @@ const EmployeeDetails = () => {
   // Delete Employee
   const deleteEmployee = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/employee/empID/${empID}`);
+      await axios.delete(`http://lms-be-0-0-3-release.onrender.com/api/employee/empID/${empID}`);
       setEmployee(null);
       setError("Employee deleted successfully.");
     } catch {
