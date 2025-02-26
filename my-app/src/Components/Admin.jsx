@@ -14,7 +14,7 @@ const AdminAuth = ({ isLogin, setIsLogin }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const API_BASE_URL = "http://localhost:8080/api/admin"; // Ensure correct backend URL
+        const API_BASE_URL = "http://lms-be-0-0-3-release.onrender.com/api/admin"; // Ensure correct backend URL
         const endpoint = isLogin ? `${API_BASE_URL}/login` : `${API_BASE_URL}/signup`;
 
         try {
