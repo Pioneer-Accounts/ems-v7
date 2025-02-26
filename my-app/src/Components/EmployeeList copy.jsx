@@ -13,7 +13,7 @@ const EmployeeList = () => {
   useEffect(() => {
     // Fetch employee data from the backend
     axios
-      .get('http://lms-be-0-0-3-release.onrender.com/api/all')
+      .get('https://lms-be-0-0-3-release.onrender.com/api/all')
       .then((response) => {
         setEmployees(response.data);
       })
