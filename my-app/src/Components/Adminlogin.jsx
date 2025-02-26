@@ -19,7 +19,7 @@ const AdminLogin = () => {
         setError(""); // Clear previous errors
 
         try {
-            const response = await fetch("http://localhost:8080/api/admin/login", {
+            const response = await fetch("http://lms-be-0-0-3-release.onrender.com/api/admin/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
