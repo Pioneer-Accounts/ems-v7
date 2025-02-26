@@ -26,7 +26,7 @@ const EmployeeManager = () => {
   });
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/all')
+    axios.get('http://lms-be-0-0-3-release.onrender.com/api/all')
       .then(response => setEmployees(response.data))
       .catch(error => console.error('Error fetching employees:', error));
   }, []);
@@ -57,7 +57,7 @@ const EmployeeManager = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8080/api/', formData)
+    axios.post('http://lms-be-0-0-3-release.onrender.com/api/', formData)
       .then(response => {
         setEmployees([...employees, response.data]);
         setFormData({
