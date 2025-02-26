@@ -19,7 +19,7 @@ const AdminLeaveRequests = () => {
   // Fetch leave requests
   const fetchLeaveRequests = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/leave1/admin/leave-requests');
+      const response = await axios.get('http://lms-be-0-0-3-release.onrender.com/api/leave1/admin/leave-requests');
       setLeaveRequests(response.data);
     } catch (error) {
       setMessage('Error fetching leave requests');
@@ -35,7 +35,7 @@ const AdminLeaveRequests = () => {
       return;
     }
     try {
-      await axios.post(`http://localhost:8080/api/leave1/admin/approve-reject/${id}`, {
+      await axios.post(`http://lms-be-0-0-3-release.onrender.com/api/leave1/admin/approve-reject/${id}`, {
         status,
         reportingHeadSignature: updatedRequest.reportingHeadSignature,
         reportingHeadReason: updatedRequest.reportingHeadReason,
@@ -76,7 +76,7 @@ const AdminLeaveRequests = () => {
   
     try {
       // Update leave request in the backend
-      await axios.post(`http://localhost:8080/api/leave1/admin/update-leave/${selectedRequest._id}`, updatedRequest);
+      await axios.post(`http://lms-be-0-0-3-release.onrender.com/api/leave1/admin/update-leave/${selectedRequest._id}`, updatedRequest);
   
       // Close modal and show success message
       setShowModal(false);
@@ -90,7 +90,7 @@ const AdminLeaveRequests = () => {
         updatedRequest.sanctioningAuthorityReason !== selectedRequest.sanctioningAuthorityReason;
   
       if (approvalChanged) {
-        axios.post('http://localhost:8080/api/admin/send-notification', {
+        axios.post('http://lms-be-0-0-3-release.onrender.com/api/admin/send-notification', {
           employeeId: updatedRequest.employeeId,
           employeeName: updatedRequest.name,
           leaveType: updatedRequest.leaveType,
@@ -328,7 +328,7 @@ const AdminLeaveRequests = () => {
                     <ul>
                       {updatedRequest.attachments.map((attachment, index) => (
                         <li key={index}>
-                          <a href={`http://localhost:8080/${attachment}`} target="_blank" rel="noopener noreferrer">{attachment}</a>
+                          <a href={`http://lms-be-0-0-3-release.onrender.com/${attachment}`} target="_blank" rel="noopener noreferrer">{attachment}</a>
                         </li>
                       ))}
                     </ul>
