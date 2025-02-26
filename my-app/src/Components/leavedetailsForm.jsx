@@ -43,7 +43,7 @@ const LeaveDetailsForm = () => {
 
   const fetchEmployeeDetails = async (id, leaveType) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/leave1/employee/${id}/${leaveType}`);
+      const response = await axios.get(`http://lms-be-0-0-3-release.onrender.com/api/leave1/employee/${id}/${leaveType}`);
       if (response.data.exists) {
         setEmployeeName(response.data.name);
         setDesignation(response.data.designation); // Set designation from the API
@@ -124,7 +124,7 @@ const LeaveDetailsForm = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/api/leave1/submit-leave', formData, {
+      const response = await axios.post('http://lms-be-0-0-3-release.onrender.com/api/leave1/submit-leave', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         }
