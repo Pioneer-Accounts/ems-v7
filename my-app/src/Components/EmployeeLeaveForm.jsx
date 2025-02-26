@@ -15,7 +15,7 @@ const EmployeeLeaveForm = () => {
     setEmployeeExists(true);
 
     try {
-      const response = await axios.get(`http://localhost:8080/api/leave/employee/${employeeId}`);
+      const response = await axios.get(`http://lms-be-0-0-3-release.onrender.com/api/leave/employee/${employeeId}`);
       if (!response.data.exists) {
         setMessage('Invalid Employee ID');
         setEmployeeExists(false);
@@ -23,7 +23,7 @@ const EmployeeLeaveForm = () => {
       }
 
       // Submit leave application
-      const leaveResponse = await axios.post('http://localhost:8080/api/leave/submit-leave', {
+      const leaveResponse = await axios.post('http://lms-be-0-0-3-release.onrender.com/api/leave/submit-leave', {
         employeeId,
         leaveType,
       });
