@@ -21,7 +21,7 @@ const ViewSingleEmployee = () => {
       return;
     }
 
-    axios.get(`http://localhost:8080/api/employee/singleemployee/empID/${inputEmpID}`)
+    axios.get(`http://lms-be-0-0-3-release.onrender.com/api/employee/singleemployee/empID/${inputEmpID}`)
       .then((response) => {
         setEmployee(response.data);
         setUpdatedEmployee(response.data); // Populate the form with current data
@@ -40,7 +40,7 @@ const ViewSingleEmployee = () => {
       return;
     }
 
-    axios.put(`http://localhost:8080/api/employee/empID/${updatedEmployee.EmpID}`, updatedEmployee)
+    axios.put(`http://lms-be-0-0-3-release.onrender.com/api/employee/empID/${updatedEmployee.EmpID}`, updatedEmployee)
       .then((response) => {
         setEmployee(response.data);
         alert('Employee details updated successfully.');
@@ -55,7 +55,7 @@ const ViewSingleEmployee = () => {
   // Delete Employee
   const deleteEmployee = () => {
     if (window.confirm('Are you sure you want to delete this employee?')) {
-      axios.delete(`http://localhost:8080/api/employee/empID/${employee.EmpID}`)
+      axios.delete(`http://lms-be-0-0-3-release.onrender.com/api/employee/empID/${employee.EmpID}`)
         .then(() => {
           setEmployee(null);
           setError('Employee deleted successfully.');
