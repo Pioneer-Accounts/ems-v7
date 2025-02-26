@@ -45,7 +45,7 @@ const AddEmployeeForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:8080/api/employee', formData)
+    axios.post('http://lms-be-0-0-3-release.onrender.com/api/employee', formData)
       .then(response => {
         setSuccessMessage('Form submitted successfully!');
         
