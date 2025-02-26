@@ -13,7 +13,7 @@ const SalaryForm = ({ empID, onDelete, onUpdate }) => {
         if (empID && month) {
             setLoading(true);
             axios
-                .get(`http://localhost:8080/api/employees/salaries/${empID}/salary/${month}`)
+                .get(`http://lms-be-0-0-3-release.onrender.com/api/employees/salaries/${empID}/salary/${month}`)
                 .then((response) => {
                     setSalary(response.data.salary);
                 })
@@ -36,7 +36,7 @@ const SalaryForm = ({ empID, onDelete, onUpdate }) => {
                 }
             };
     
-            axios.put(`http://localhost:8080/api/employees/salaries/${empID}/salary`, updatedSalary, {
+            axios.put(`http://lms-be-0-0-3-release.onrender.com/api/employees/salaries/${empID}/salary`, updatedSalary, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
@@ -60,7 +60,7 @@ const SalaryForm = ({ empID, onDelete, onUpdate }) => {
             const isConfirmed = window.confirm('Are you sure you want to delete the salary record?');
             if (isConfirmed) {
                 axios
-                    .delete(`http://localhost:8080/api/employees/salaries/${empID}/salary/${month}`)
+                    .delete(`http://lms-be-0-0-3-release.onrender.com/api/employees/salaries/${empID}/salary/${month}`)
                     .then((response) => {
                         onDelete();
                         alert('Salary record deleted');
