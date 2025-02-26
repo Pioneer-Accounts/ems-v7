@@ -37,7 +37,7 @@ const SaveSalaries = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8080/api/employees/salaries/add-salary", formData);
+      const response = await axios.post("http://lms-be-0-0-3-release.onrender.com/api/employees/salaries/add-salary", formData);
       console.log(response.data);
 
       // Success Toast (Green)
@@ -64,7 +64,7 @@ const SaveSalaries = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/employees/salaries/generate-salary",
+        "http://lms-be-0-0-3-release.onrender.com/api/employees/salaries/generate-salary",
         formData
       );
   
