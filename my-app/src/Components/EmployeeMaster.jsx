@@ -55,7 +55,7 @@ const EmployeeForm = () => {
     e.preventDefault();
     
     try {
-      const response = await axios.post('http://localhost:8080/api', formData);
+      const response = await axios.post('http://lms-be-0-0-3-release.onrender.com/api', formData);
       
       if (response.status === 201) {
         console.log('Employee added:', formData);
