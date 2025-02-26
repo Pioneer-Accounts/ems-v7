@@ -10,7 +10,7 @@ const LeaveRecords = () => {
 
   // Fetch leave balances from the backend
   useEffect(() => {
-    axios.get('http://localhost:8080/api/leave/leave-records')
+    axios.get('http://lms-be-0-0-3-release.onrender.com/api/leave/leave-records')
       .then(response => {
         setLeaveRecords(response.data);
       })
